@@ -139,7 +139,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ConsoleApplication1.cpp" />
+    <ClCompile Include="cars.cpp" />
+    <ClCompile Include="fabric.cpp" />
+    <ClCompile Include="funiture.cpp" />
+    <ClCompile Include="keeper.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="worker.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="cars.h" />
+    <ClInclude Include="fabric.h" />
+    <ClInclude Include="funiture.h" />
+    <ClInclude Include="keeper.h" />
+    <ClInclude Include="worker.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
