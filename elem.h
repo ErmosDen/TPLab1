@@ -5,6 +5,6 @@
 class elem
 {
 public:
-	elem* ukaz;
-	fabric* str;
+	elem* next;
+	fabric* c_data;
 };
