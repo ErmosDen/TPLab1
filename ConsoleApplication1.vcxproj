@@ -148,6 +148,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cars.h" />
+    <ClInclude Include="elem.h" />
     <ClInclude Include="fabric.h" />
     <ClInclude Include="funiture.h" />
     <ClInclude Include="keeper.h" />
