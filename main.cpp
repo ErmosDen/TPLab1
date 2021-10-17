@@ -63,11 +63,11 @@ int main(void)
             }
             break;
         case 2:
-            std::cout << "Какую запись изменить" << keep.getsize() << std::endl;
+            std::cout << "Какую запись изменить, всего записей - " << keep.getsize() - 1  << " нумерация с 0" << std::endl;
             std::cin >> id1;
             std::cin.ignore(32767, '\n');
             keep[id1]->getpar();
-            std::cout << "какой параметр изменить" << std::endl;
+            std::cout << "какой параметр изменить " << std::endl;
             std::cin >> id2;
             std::cin.ignore(32767, '\n');
             std::cout << "на что изменить" << std::endl;
@@ -76,7 +76,7 @@ int main(void)
             keep[id1]->change(id2, znach);
             break;
         case 3:
-            std::cout << "Какую запись удалить" << keep.getsize() << std::endl;
+            std::cout << "Какую запись удалить, всего записей - " << keep.getsize() - 1 << " нумерация с 0" << std::endl;
             std::cin >> id1;
             std::cin.ignore(32767, '\n');
             keep.rm(id1);
