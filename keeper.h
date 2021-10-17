@@ -24,7 +24,7 @@ public:
 	int getsizeOfFuniture();
 	int getsizeOfCars();
 	int getsizeOfWorker();
-	void rm();
+	void rm(int index);
 private:
 	int size;
 	int sizeOfFuniture;

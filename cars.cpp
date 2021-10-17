@@ -2,12 +2,12 @@
 
 cars::cars() 
 {
-	std::cout << "êîíñòğóêòîğ êëàññà cars" << std::endl;
+	std::cout << "ĞºĞ¾Ğ½ÑÑ‚Ñ€ÑƒĞºÑ‚Ğ¾Ñ€ ĞºĞ»Ğ°ÑÑĞ° cars" << std::endl;
 }
 
 cars::~cars()
 {
-	std::cout << "äåñòğóêòîğ êëàññà cars" << std::endl;
+	std::cout << "Ğ´ĞµÑÑ‚Ñ€ÑƒĞºÑ‚Ğ¾Ñ€ ĞºĞ»Ğ°ÑÑĞ° cars" << std::endl;
 }
 
 cars::cars(const cars& copy)
@@ -15,14 +15,14 @@ cars::cars(const cars& copy)
 	mark = copy.mark;
 	model = copy.model;
 	number = copy.number;
-	std::cout << "Âûçîâ êîíñòğóêòîğà êîïèğîâàíèÿ cars" << std::endl;
+	std::cout << "Ğ’Ñ‹Ğ·Ğ¾Ğ² ĞºĞ¾Ğ½ÑÑ‚Ñ€ÑƒĞºÑ‚Ğ¾Ñ€Ğ° ĞºĞ¾Ğ¿Ğ¸Ñ€Ğ¾Ğ²Ğ°Ğ½Ğ¸Ñ cars" << std::endl;
 }
 
 cars::cars(std::string marki, std::string modeli, std::string numberi) {
 	this->mark = marki;
-	this->model = model;
+	this->model = modeli;
 	this->number = numberi;
-	std::cout << "Âûçîâ êîíñòğóêòîğà c ïàğàìåòğîì cars" << std::endl;
+	std::cout << "Ğ’Ñ‹Ğ·Ğ¾Ğ² ĞºĞ¾Ğ½ÑÑ‚Ñ€ÑƒĞºÑ‚Ğ¾Ñ€Ğ° c Ğ¿Ğ°Ñ€Ğ°Ğ¼ĞµÑ‚Ñ€Ğ¾Ğ¼ cars" << std::endl;
 }
 
 void cars::change(int id, std::string znach) {
@@ -38,7 +38,7 @@ void cars::change(int id, std::string znach) {
 		number = znach;
 		break;
 	default:
-		std::cout << "íåâåğíûé ââîä" << std::endl;
+		std::cout << "Ğ½ĞµĞ²ĞµÑ€Ğ½Ñ‹Ğ¹ Ğ²Ğ²Ğ¾Ğ´" << std::endl;
 		break;
 	}
 }
@@ -46,11 +46,11 @@ void cars::change(int id, std::string znach) {
 void cars::setpar()
 {
 	std::cin.ignore(32767, '\n');
-	std::cout << "Ââåäèòå ìàğêó ìàøèíû" << std::endl;
+	std::cout << "Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ Ğ¼Ğ°Ñ€ĞºÑƒ Ğ¼Ğ°ÑˆĞ¸Ğ½Ñ‹" << std::endl;
 	getline(std::cin, mark);
-	std::cout << "Ââåäèòå ìîäåëü ìàøèíû" << std::endl;
+	std::cout << "Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ Ğ¼Ğ¾Ğ´ĞµĞ»ÑŒ Ğ¼Ğ°ÑˆĞ¸Ğ½Ñ‹" << std::endl;
 	std::getline(std::cin, model);
-	std::cout << "Ââåäèòå íîìåğ ìàøèíû" << std::endl;
+	std::cout << "Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ Ğ½Ğ¾Ğ¼ĞµÑ€ Ğ¼Ğ°ÑˆĞ¸Ğ½Ñ‹" << std::endl;
 	std::getline(std::cin, number);
 }
 
@@ -64,15 +64,25 @@ void cars::setpar(std::string marki, std::string modeli, std::string numberi) {
 
 void cars::getpar()
 {
-	std::cout << "Èíôîğìàöèÿ î ìàøèíå:" << std::endl;
-	std::cout << "Ìàğêà ìàøèíû - " << mark << std::endl;
-	std::cout << "Ìîäåëü ìàøèíû - " << model << std::endl;
-	std::cout << "Ğåãèñòğàöèîííûé íîìåğ - " << number << std::endl;
+	std::cout << "Ğ˜Ğ½Ñ„Ğ¾Ñ€Ğ¼Ğ°Ñ†Ğ¸Ñ Ğ¾ Ğ¼Ğ°ÑˆĞ¸Ğ½Ğµ:" << std::endl;
+	std::cout << "ĞœĞ°Ñ€ĞºĞ° Ğ¼Ğ°ÑˆĞ¸Ğ½Ñ‹ - " << mark << std::endl;
+	std::cout << "ĞœĞ¾Ğ´ĞµĞ»ÑŒ Ğ¼Ğ°ÑˆĞ¸Ğ½Ñ‹ - " << model << std::endl;
+	std::cout << "Ğ ĞµĞ³Ğ¸ÑÑ‚Ñ€Ğ°Ñ†Ğ¸Ğ¾Ğ½Ğ½Ñ‹Ğ¹ Ğ½Ğ¾Ğ¼ĞµÑ€ - " << number << std::endl;
 	std::cout << std::endl;
 
 }
 
 void cars::save() 
 {
-
+	std::ofstream fout;
+	fout.open("fabric.txt", std::ios_base::app);
+	if (!fout.is_open())
+	{
+		throw "ĞÑˆĞ¸Ğ±ĞºĞ° Ğ¾Ñ‚ĞºÑ€Ñ‹Ñ‚Ğ¸Ñ Ñ„Ğ°Ğ¹Ğ»Ğ°";
+	}
+	else
+	{
+		fout << 1 << std::endl << mark << std::endl << model << std::endl << number << std::endl;
+		fout.close();
+	}
 }

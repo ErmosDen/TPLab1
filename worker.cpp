@@ -4,12 +4,12 @@
 
 worker::worker()
 {
-	std::cout << "êîíñòðóêòîð êëàññà worker" << std::endl;
+	std::cout << "ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ ÐºÐ»Ð°ÑÑÐ° worker" << std::endl;
 }
 
 worker::~worker()
 {
-	std::cout << "äåñòðóêòîð êëàññà worker" << std::endl;
+	std::cout << "Ð´ÐµÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ ÐºÐ»Ð°ÑÑÐ° worker" << std::endl;
 }
 
 worker::worker(const worker& copy)
@@ -20,7 +20,7 @@ worker::worker(const worker& copy)
 	position = copy.position;
 	adress = copy.adress;
 	phone = copy.phone;
-	std::cout << "Âûçîâ êîíñòðóêòîðà êîïèðîâàíèÿ worker" << std::endl;
+	std::cout << "Ð’Ñ‹Ð·Ð¾Ð² ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€Ð° ÐºÐ¾Ð¿Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ñ worker" << std::endl;
 }
 
 worker::worker(std::string fami, std::string namei, std::string onamei, std::string positioni, std::string adressi, std::string phonei) {
@@ -30,7 +30,7 @@ worker::worker(std::string fami, std::string namei, std::string onamei, std::str
 	this->position = positioni;
 	this->adress = adressi;
 	this->phone = phonei;
-	std::cout << "Âûçîâ êîíñòðóêòîðà c ïàðàìåòðîì worker" << std::endl;
+	std::cout << "Ð’Ñ‹Ð·Ð¾Ð² ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€Ð° c Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð¾Ð¼ worker" << std::endl;
 }
 
 void worker::change(int id, std::string znach) {
@@ -55,7 +55,7 @@ void worker::change(int id, std::string znach) {
 		phone = znach;
 		break;
 	default:
-		std::cout << "íåâåðíûé ââîä" << std::endl;
+		std::cout << "Ð½ÐµÐ²ÐµÑ€Ð½Ñ‹Ð¹ Ð²Ð²Ð¾Ð´" << std::endl;
 		break;
 	}
 }
@@ -63,17 +63,17 @@ void worker::change(int id, std::string znach) {
 void worker::setpar()
 {
 	std::cin.ignore(32767, '\n');
-	std::cout << "Ââåäèòå ôàìèëèþ ðàáî÷åãî" << std::endl;
+	std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ„Ð°Ð¼Ð¸Ð»Ð¸ÑŽ Ñ€Ð°Ð±Ð¾Ñ‡ÐµÐ³Ð¾" << std::endl;
 	getline(std::cin, fam);
-	std::cout << "Ââåäèòå èìÿ ðàáî÷åãî" << std::endl;
+	std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð¼Ñ Ñ€Ð°Ð±Ð¾Ñ‡ÐµÐ³Ð¾" << std::endl;
 	std::getline(std::cin, name);
-	std::cout << "Ââåäèòå îò÷åñòâî ðàáî÷åãî" << std::endl;
+	std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¾Ñ‚Ñ‡ÐµÑÑ‚Ð²Ð¾ Ñ€Ð°Ð±Ð¾Ñ‡ÐµÐ³Ð¾" << std::endl;
 	std::getline(std::cin, oname);
-	std::cout << "Ââåäèòå äîëæíîñòü ðàáî÷åãî" << std::endl;
+	std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð´Ð¾Ð»Ð¶Ð½Ð¾ÑÑ‚ÑŒ Ñ€Ð°Ð±Ð¾Ñ‡ÐµÐ³Ð¾" << std::endl;
 	getline(std::cin, position);
-	std::cout << "Ââåäèòå àäðåñ" << std::endl;
+	std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð°Ð´Ñ€ÐµÑ" << std::endl;
 	std::getline(std::cin, adress);
-	std::cout << "Ââåäèòå òåëåôîí" << std::endl;
+	std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ‚ÐµÐ»ÐµÑ„Ð¾Ð½" << std::endl;
 	std::getline(std::cin, phone);
 }
 
@@ -88,18 +88,28 @@ void worker::setpar(std::string fami, std::string namei, std::string onamei, std
 
 void worker::getpar()
 {
-	std::cout << "Èíôîðìàöèÿ î ìàøèíå:" << std::endl;
-	std::cout << "Ôàìèëèÿ - " << fam << std::endl;
-	std::cout << "Èìÿ - " << name << std::endl;
-	std::cout << "Îò÷åñòâî - " << oname << std::endl;
-	std::cout << "Äîëæíîñòü - " << position << std::endl;
-	std::cout << "Àäðåñ - " << adress << std::endl;
-	std::cout << "Òåëåôîí - " << phone << std::endl;
+	std::cout << "Ð˜Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸Ñ Ð¾ Ð¼Ð°ÑˆÐ¸Ð½Ðµ:" << std::endl;
+	std::cout << "Ð¤Ð°Ð¼Ð¸Ð»Ð¸Ñ - " << fam << std::endl;
+	std::cout << "Ð˜Ð¼Ñ - " << name << std::endl;
+	std::cout << "ÐžÑ‚Ñ‡ÐµÑÑ‚Ð²Ð¾ - " << oname << std::endl;
+	std::cout << "Ð”Ð¾Ð»Ð¶Ð½Ð¾ÑÑ‚ÑŒ - " << position << std::endl;
+	std::cout << "ÐÐ´Ñ€ÐµÑ - " << adress << std::endl;
+	std::cout << "Ð¢ÐµÐ»ÐµÑ„Ð¾Ð½ - " << phone << std::endl;
 	std::cout << std::endl;
 
 }
 
 void worker::save()
 {
-
+	std::ofstream fout;
+	fout.open("fabric.txt", std::ios_base::app);
+	if (!fout.is_open())
+	{
+		throw "ÐžÑˆÐ¸Ð±ÐºÐ° Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚Ð¸Ñ Ñ„Ð°Ð¹Ð»Ð°";
+	}
+	else
+	{
+		fout << 2 << std::endl << fam << std::endl << name << std::endl << oname << std::endl << position << std::endl << adress << std::endl << phone << std::endl;
+		fout.close();
+	}
 }

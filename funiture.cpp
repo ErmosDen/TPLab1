@@ -5,12 +5,12 @@
 
 funiture::funiture()
 {
-	std::cout << "êîíñòðóêòîð êëàññà funiture" << std::endl;
+	std::cout << "ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ ÐºÐ»Ð°ÑÑÐ° funiture" << std::endl;
 }
 
 funiture::~funiture()
 {
-	std::cout << "äåñòðóêòîð êëàññà funiture" << std::endl;
+	std::cout << "Ð´ÐµÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ ÐºÐ»Ð°ÑÑÐ° funiture" << std::endl;
 }
 
 funiture::funiture(const funiture& copy)
@@ -23,7 +23,7 @@ funiture::funiture(const funiture& copy)
 	colorCode=copy.colorCode;
 	material=copy.material;
 	price=copy.price;
-	std::cout << "Âûçîâ êîíñòðóêòîðà êîïèðîâàíèÿ funiture" << std::endl;
+	std::cout << "Ð’Ñ‹Ð·Ð¾Ð² ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€Ð° ÐºÐ¾Ð¿Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ñ funiture" << std::endl;
 }
 
 funiture::funiture(std::string tp, int hi, int wi, int li, std::string ci, int cci, std::string mati, int pi) {
@@ -35,7 +35,7 @@ funiture::funiture(std::string tp, int hi, int wi, int li, std::string ci, int c
 	this->colorCode = cci;
 	this->material = mati;
 	this->price = pi;
-	std::cout << "Âûçîâ êîíñòðóêòîðà c ïàðàìåòðîì funiture" << std::endl;
+	std::cout << "Ð’Ñ‹Ð·Ð¾Ð² ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€Ð° c Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð¾Ð¼ funiture" << std::endl;
 }
 
 void funiture::change(int id, std::string znach) {
@@ -66,7 +66,7 @@ void funiture::change(int id, std::string znach) {
 		price = atoi(znach.c_str());
 		break;
 	default:
-		std::cout << "íåâåðíûé ââîä" << std::endl;
+		std::cout << "Ð½ÐµÐ²ÐµÑ€Ð½Ñ‹Ð¹ Ð²Ð²Ð¾Ð´" << std::endl;
 		break;
 	}
 }
@@ -75,25 +75,25 @@ void funiture::setpar()
 {
 	std::string line;
 	std::cin.ignore(32767, '\n');
-	std::cout << "Ââåäèòå òèï ìåáåëè" << std::endl;
+	std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ‚Ð¸Ð¿ Ð¼ÐµÐ±ÐµÐ»Ð¸" << std::endl;
 	getline(std::cin, type);
-	std::cout << "Ââåäèòå âûñîòó" << std::endl;
+	std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð²Ñ‹ÑÐ¾Ñ‚Ñƒ" << std::endl;
 	std::getline(std::cin, line);
 	h = atoi(line.c_str());
-	std::cout << "Ââåäèòå øèðèíó" << std::endl;
+	std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑˆÐ¸Ñ€Ð¸Ð½Ñƒ" << std::endl;
 	std::getline(std::cin, line);
 	w = atoi(line.c_str());
-	std::cout << "Ââåäèòå ãëóáèíó" << std::endl;
+	std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð³Ð»ÑƒÐ±Ð¸Ð½Ñƒ" << std::endl;
 	std::getline(std::cin, line);
 	l = atoi(line.c_str());
-	std::cout << "Ââåäèòå öâåò" << std::endl;
+	std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ†Ð²ÐµÑ‚" << std::endl;
 	std::getline(std::cin, color);
-	std::cout << "Ââåäèòå öâåòîâîé êîä" << std::endl;
+	std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ†Ð²ÐµÑ‚Ð¾Ð²Ð¾Ð¹ ÐºÐ¾Ð´" << std::endl;
 	std::getline(std::cin, line);
 	colorCode = atoi(line.c_str());
-	std::cout << "Ââåäèòå ìàòåðèàë" << std::endl;
+	std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¼Ð°Ñ‚ÐµÑ€Ð¸Ð°Ð»" << std::endl;
 	std::getline(std::cin, material);
-	std::cout << "Ââåäèòå öåíó" << std::endl;
+	std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ†ÐµÐ½Ñƒ" << std::endl;
 	std::getline(std::cin, line);
 	price = atoi(line.c_str());
 }
@@ -111,20 +111,30 @@ void funiture::setpar(std::string tp, int hi, int wi, int li, std::string ci, in
 
 void funiture::getpar()
 {
-	std::cout << "Èíôîðìàöèÿ î ïðåäìåòå ìåáåëè:" << std::endl;
-	std::cout << "Òèï - " << type << std::endl;
-	std::cout << "Âûñîòà - " << h << std::endl;
-	std::cout << "Øèðèíà - " << w << std::endl;
-	std::cout << "Ãëóáèíà - " << l << std::endl;
-	std::cout << "Öâåò - " << color << std::endl;
-	std::cout << "Öâåòîâîé Êîä - " << colorCode << std::endl;
-	std::cout << "Ìàòåðèàë - " << material << std::endl;
-	std::cout << "Öåíà - " << price << std::endl;
+	std::cout << "Ð˜Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸Ñ Ð¾ Ð¿Ñ€ÐµÐ´Ð¼ÐµÑ‚Ðµ Ð¼ÐµÐ±ÐµÐ»Ð¸:" << std::endl;
+	std::cout << "Ð¢Ð¸Ð¿ - " << type << std::endl;
+	std::cout << "Ð’Ñ‹ÑÐ¾Ñ‚Ð° - " << h << std::endl;
+	std::cout << "Ð¨Ð¸Ñ€Ð¸Ð½Ð° - " << w << std::endl;
+	std::cout << "Ð“Ð»ÑƒÐ±Ð¸Ð½Ð° - " << l << std::endl;
+	std::cout << "Ð¦Ð²ÐµÑ‚ - " << color << std::endl;
+	std::cout << "Ð¦Ð²ÐµÑ‚Ð¾Ð²Ð¾Ð¹ ÐšÐ¾Ð´ - " << colorCode << std::endl;
+	std::cout << "ÐœÐ°Ñ‚ÐµÑ€Ð¸Ð°Ð» - " << material << std::endl;
+	std::cout << "Ð¦ÐµÐ½Ð° - " << price << std::endl;
 	std::cout << std::endl;
 
 }
 
 void funiture::save()
 {
-
+	std::ofstream fout;
+	fout.open("fabric.txt", std::ios_base::app);
+	if (!fout.is_open())
+	{
+		throw "ÐžÑˆÐ¸Ð±ÐºÐ° Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚Ð¸Ñ Ñ„Ð°Ð¹Ð»Ð°";
+	}
+	else
+	{
+		fout << 3 << std::endl << type << std::endl << h << std::endl << w << std::endl << l << std::endl << color << std::endl << colorCode << std::endl << material << std::endl << price << std::endl;
+		fout.close();
+	}
 }

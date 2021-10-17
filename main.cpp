@@ -1,4 +1,4 @@
-﻿
+
 #include <iostream>
 #include <Windows.h>
 #include <clocale>
@@ -76,7 +76,10 @@ int main(void)
             keep[id1]->change(id2, znach);
             break;
         case 3:
-            keep.rm();
+            std::cout << "Какую запись удалить" << keep.getsize() << std::endl;
+            std::cin >> id1;
+            std::cin.ignore(32767, '\n');
+            keep.rm(id1);
             break;
         case 4:
             for (int i = 0; i < keep.getsize(); i++)
