@@ -4,12 +4,12 @@ class worker :
     public fabric
 {
 
-
+public:
     worker();
     worker(std::string fami, std::string namei, std::string onamei, std::string positioni, std::string adressi, std::string phonei);
     worker(const worker& copy);
     ~worker();
-    void read(int ind, std::string zam);
+    void change(int id, std::string znach);
     void setpar();
     void setpar(std::string fami, std::string namei, std::string onamei, std::string positioni, std::string adressi, std::string phonei);
     void getpar();

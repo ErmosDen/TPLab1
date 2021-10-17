@@ -3,11 +3,12 @@
 class funiture :
     public fabric
 {
+public:
     funiture();
     funiture(std::string tp, int hi, int wi, int li, std::string ci, int cci, std::string mati, int pi);
     funiture(const funiture& copy);
     ~funiture();
-    void read(int ind, std::string zam);
+    void change(int id, std::string znach);
     void setpar();
     void setpar(std::string tp, int hi, int wi, int li, std::string ci, int cci, std::string mati, int pi);
     void getpar();
