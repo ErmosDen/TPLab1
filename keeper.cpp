@@ -61,20 +61,26 @@ void keeper::save()
 {
 	std::ofstream fout;
 	fout.open("fabric.txt", std::ios_base::out);
-	if (!fout.is_open()) 
-	{
-		throw "Ошибка открытия файла";
+	try {
+		if (!fout.is_open())
+		{
+			throw "Ошибка открытия файла";
+		}
+		else
+		{
+			fout << size << std::endl;
+			fout.close();
+		}
+		elem* buf = head;
+		for (int i = 0; i < size; i++)
+		{
+			buf->c_data->save();
+			buf = buf->next;
+		}
 	}
-	else 
+	catch (const char* exception) // обработчик исключений типа const char*
 	{
-		fout << size << std::endl;
-		fout.close();
-	}
-	elem* buf = head;
-	for (int i = 0; i < size; i++)
-	{
-		buf->c_data->save();
-		buf = buf->next;
+		std::cerr << "Error: " << exception << '\n';
 	}
 }
 
@@ -98,75 +104,83 @@ void keeper::load()
 	int sizeOfFile;
 	fabric *fab;
 	fin.open("fabric.txt");
-	if (!fin.is_open())
-	{
-		throw "Ошибка открытия файла";
-	}
-	else
-	{
-		fin >> sizeOfFile;
-		for (int i = 0; i < sizeOfFile; i++)
+	try {
+		if (!fin.is_open())
 		{
-			fin >> typeOfData;
-			fin.ignore(32767, '\n');
-			if (typeOfData == 1)
+			throw "Ошибка открытия файла";
+		}
+
+
+		else
+		{
+			fin >> sizeOfFile;
+			for (int i = 0; i < sizeOfFile; i++)
 			{
-				std::string mark;
-				std::string model;
-				std::string number;
-				getline(fin, mark);
-				getline(fin, model);
-				getline(fin, number);
-				cars* car;
-				car = new cars(mark,model,number);
-				fab = car;
-				push(fab);
-			}
-			if (typeOfData == 2)
-			{
-				std::string fam;
-				std::string name;
-				std::string oname;
-				std::string position;
-				std::string adress;
-				std::string phone;
-				getline(fin, fam);
-				getline(fin, name);
-				getline(fin, oname);
-				getline(fin, position);
-				getline(fin, adress);
-				getline(fin, phone);
-				worker* work;
-				work = new worker(fam, name, oname, position, adress, phone);
-				fab = work;
-				push(fab);
-			}
-			if (typeOfData == 3)
-			{
-				std::string type;
-				std::string h;
-				std::string w;
-				std::string l;
-				std::string color;
-				std::string colorCode;
-				std::string material;
-				std::string price;
-				getline(fin, type);
-				getline(fin, h);
-				getline(fin, w);
-				getline(fin, l);
-				getline(fin, color);
-				getline(fin, colorCode);
-				getline(fin, material);
-				getline(fin, price);
-				funiture* funit;
-				funit = new funiture(type, atoi(h.c_str()), atoi(w.c_str()), atoi(l.c_str()), color, atoi(colorCode.c_str()), material, atoi(price.c_str()));
-				fab = funit;
-				push(fab);
+				fin >> typeOfData;
+				fin.ignore(32767, '\n');
+				if (typeOfData == 1)
+				{
+					std::string mark;
+					std::string model;
+					std::string number;
+					getline(fin, mark);
+					getline(fin, model);
+					getline(fin, number);
+					cars* car;
+					car = new cars(mark, model, number);
+					fab = car;
+					push(fab);
+				}
+				if (typeOfData == 2)
+				{
+					std::string fam;
+					std::string name;
+					std::string oname;
+					std::string position;
+					std::string adress;
+					std::string phone;
+					getline(fin, fam);
+					getline(fin, name);
+					getline(fin, oname);
+					getline(fin, position);
+					getline(fin, adress);
+					getline(fin, phone);
+					worker* work;
+					work = new worker(fam, name, oname, position, adress, phone);
+					fab = work;
+					push(fab);
+				}
+				if (typeOfData == 3)
+				{
+					std::string type;
+					std::string h;
+					std::string w;
+					std::string l;
+					std::string color;
+					std::string colorCode;
+					std::string material;
+					std::string price;
+					getline(fin, type);
+					getline(fin, h);
+					getline(fin, w);
+					getline(fin, l);
+					getline(fin, color);
+					getline(fin, colorCode);
+					getline(fin, material);
+					getline(fin, price);
+					funiture* funit;
+					funit = new funiture(type, atoi(h.c_str()), atoi(w.c_str()), atoi(l.c_str()), color, atoi(colorCode.c_str()), material, atoi(price.c_str()));
+					fab = funit;
+					push(fab);
+				}
+
 			}
 
 		}
-
+	}
+	catch (const char* exception) // обработчик исключений типа const char*
+	{
+		std::cerr << "Error: " << exception << '\n';
 	}
 }
 
@@ -225,3 +239,4 @@ void keeper::rm(int index)
 		size--;
 	}
 }
+

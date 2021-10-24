@@ -128,13 +128,20 @@ void funiture::save()
 {
 	std::ofstream fout;
 	fout.open("fabric.txt", std::ios_base::app);
+	try {
 	if (!fout.is_open())
-	{
-		throw "Ошибка открытия файла";
-	}
+		
+			{
+				throw "Ошибка открытия файла";
+			}
 	else
 	{
 		fout << 3 << std::endl << type << std::endl << h << std::endl << w << std::endl << l << std::endl << color << std::endl << colorCode << std::endl << material << std::endl << price << std::endl;
 		fout.close();
+	}
+	}
+	catch (const char* exception) // обработчик исключений типа const char*
+	{
+		std::cerr << "Error: " << exception << '\n';
 	}
 }

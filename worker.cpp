@@ -103,13 +103,19 @@ void worker::save()
 {
 	std::ofstream fout;
 	fout.open("fabric.txt", std::ios_base::app);
-	if (!fout.is_open())
-	{
-		throw "Ошибка открытия файла";
+	try {
+		if (!fout.is_open())
+		{
+			throw "Ошибка открытия файла";
+		}
+		else
+		{
+			fout << 2 << std::endl << fam << std::endl << name << std::endl << oname << std::endl << position << std::endl << adress << std::endl << phone << std::endl;
+			fout.close();
+		}
 	}
-	else
+	catch (const char* exception) // обработчик исключений типа const char*
 	{
-		fout << 2 << std::endl << fam << std::endl << name << std::endl << oname << std::endl << position << std::endl << adress << std::endl << phone << std::endl;
-		fout.close();
+		std::cerr << "Error: " << exception << '\n';
 	}
 }

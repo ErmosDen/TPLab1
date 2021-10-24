@@ -76,13 +76,19 @@ void cars::save()
 {
 	std::ofstream fout;
 	fout.open("fabric.txt", std::ios_base::app);
-	if (!fout.is_open())
-	{
-		throw "Ошибка открытия файла";
+	try {
+		if (!fout.is_open())
+		{
+			throw "Ошибка открытия файла";
+		}
+		else
+		{
+			fout << 1 << std::endl << mark << std::endl << model << std::endl << number << std::endl;
+			fout.close();
+		}
 	}
-	else
+	catch (const char* exception) // обработчик исключений типа const char*
 	{
-		fout << 1 << std::endl << mark << std::endl << model << std::endl << number << std::endl;
-		fout.close();
+		std::cerr << "Error: " << exception << '\n';
 	}
 }
